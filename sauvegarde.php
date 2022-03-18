@@ -20,7 +20,7 @@ $nom=$_POST['nom'];
 $prenom=$_POST['prenom'];
 $adresse=$_POST['adresse'];
 if($id !=null) {
-    $resultat = $db->query("update etudiant set nom='$nom' where id=$id")or die (print_r($db->errorInfo()));
+    $resultat = $db->query("update etudiant set nom='$nom',prenom='$prenom',adresse='$adresse' where id=$id")or die (print_r($db->errorInfo()));
 
 }else{
    $resultat = $db-> query ('insert into etudiant (nom,prenom,adresse) values ("'.$nom.'","'.$prenom.'","'.$adresse.'")')or die (print_r($db->errorInfo()));
